@@ -3,13 +3,16 @@ import React from 'react'
 import {containerFull} from "../../Common/Pagecss"
 import {formHead} from "../../Common/Formcss"
 import Bottomnavbar from '../../Components/Bottomnavbar'
+import Topnavbar from '../../Components/Topnavbar'
+import FollowersRendomPost from '../../Components/FollowersRendomPost'
 
 const Mainpage = ({navigation}) => {
   return (
     <View style={containerFull}>
     <StatusBar />
+    <Topnavbar />
     <Bottomnavbar />
-      <Text style={formHead}>Mainpage</Text>
+    <FollowersRendomPost />
     </View>
   )
 }

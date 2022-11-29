@@ -6,9 +6,9 @@ module.exports = {
         alignItems: 'center',
         justifyContent: 'center'
     },
-    logo: {
+    logo1: {
         // width: 200,
-        height: 70,
+        height: 90,
         resizeMode: 'contain',
         marginBottom: 20
         // backgroundColor: 'white',

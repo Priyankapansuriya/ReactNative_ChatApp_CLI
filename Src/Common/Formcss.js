@@ -1,4 +1,4 @@
-modual.exports = {
+module.exports = {
     formHead: {
         fontSize: 30,
         color: 'white',
@@ -15,6 +15,7 @@ modual.exports = {
         paddingHorizontal: 15,
         paddingVertical: 10,
         fontSize: 18,
+        color:'black',
     },
     formbtn: {
         width: '80%',
@@ -56,5 +57,5 @@ modual.exports = {
         borderRadius: 10,
         width: '80%',
         marginVertical: 10,
-    }, 
+    },
 }
