@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import chattt from '../../../../Assets/chattt.png';
+import l1 from '../../../../Assets/l1.png';
 import {formHead2, formInput, formbtn} from '../../../Common/Formcss';
 import {containerFull, goback, logo1} from '../../../Common/Pagecss';
 
@@ -23,7 +23,7 @@ const Signup_ChoosePassword = ({navigation}) => {
           Go Back
         </Text>
       </TouchableOpacity>
-      <Image source={chattt} style={logo1} />
+      <Image source={l1} style={logo1} />
       <Text style={formHead2}>Choose Strong Password</Text>
       <TextInput
         placeholder="Enter Password"

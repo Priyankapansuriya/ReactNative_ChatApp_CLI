@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import chattt from '../../../../Assets/chattt.png';
+import l1 from '../../../../Assets/l1.png';
 import {formHead2, formInput, formbtn} from '../../../Common/Formcss';
 import {containerFull, goback, logo1, row} from '../../../Common/Pagecss';
 
@@ -23,7 +23,7 @@ const Signup_AccountCreated = ({navigation}) => {
           Go Back
         </Text>
       </TouchableOpacity>
-      <Image source={chattt} style={logo1} />
+      <Image source={l1} style={logo1} />
       <View style={row}>
         <Icon name="check-decagram" size={30} color="green" />
         <Text style={formHead2}> Account Creadted Succesfully</Text>

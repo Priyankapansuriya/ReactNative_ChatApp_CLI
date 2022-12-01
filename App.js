@@ -17,6 +17,7 @@ import All_Chats from './Src/Screens/ChatSection/All_Chats';
 import SearchUserPage from './Src/Screens/Mainpage/SearchUserPage';
 import Notification from './Src/Screens/Mainpage/Notification';
 import MyUserProfile from './Src/Screens/Profile/MyUserProfile';
+import Setting1 from './Src/Screens/Setting/Setting1';
 
 const Stack = createNativeStackNavigator();
 
@@ -87,6 +88,13 @@ const App = () => {
         <Stack.Screen
           name="MyUserProfile"
           component={MyUserProfile}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="Setting1"
+          component={Setting1}
           options={{
             animation: 'fade',
           }}

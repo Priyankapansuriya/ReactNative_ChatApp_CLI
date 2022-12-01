@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, Image, TextInput} from 'react-native';
 import React from 'react';
-import chattt from '../../../../Assets/chattt.png';
+import l1 from '../../../../Assets/l1.png';
 import {containerFull, hr80, logo1} from '../../../Common/Pagecss';
 import {
   formHead,
@@ -13,7 +13,7 @@ import {
 const Login = ({navigation}) => {
   return (
     <View style={containerFull}>
-      <Image source={chattt} style={logo1} />
+      <Image source={l1} style={logo1} />
       <Text style={formHead}>Login</Text>
       <TextInput placeholder="Enter Your Email" style={formInput} />
       <TextInput

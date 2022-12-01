@@ -1,13 +1,13 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import chattt from '../../Assets/chattt.png';
+import l1 from '../../Assets/l1.png';
 import {icons1, logo2} from '../Common/Pagecss';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Topnavbar = ({navigation, page}) => {
   return (
     <View style={styles.container}>
-      <Image source={chattt} style={logo2} />
+      <Image source={l1} style={logo2} />
       {page == 'Mainpage' && (
         <Icon
           name="chatbubbles-outline"
@@ -15,6 +15,15 @@ const Topnavbar = ({navigation, page}) => {
           color="black"
           style={icons1}
           onPress={() => navigation.navigate('All_Chats')}
+        />
+      )}
+      {page == 'MyUserProfile' && (
+        <Icon
+          name="settings-outline"
+          size={24}
+          color="black"
+          style={icons1}
+          onPress={() => navigation.navigate('Setting1')}
         />
       )}
     </View>

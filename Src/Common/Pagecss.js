@@ -37,7 +37,7 @@ module.exports = {
   },
   logo2: {
     // width: 200,
-    height: 30,
+    height: 40,
     resizeMode: 'contain',
     // backgroundColor: 'white',
     width: 100,
