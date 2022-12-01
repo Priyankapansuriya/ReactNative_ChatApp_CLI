@@ -1,18 +1,16 @@
 import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {containerFull} from '../../Common/Pagecss';
-import {formHead} from '../../Common/Formcss';
 import Bottomnavbar from '../../Components/Bottomnavbar';
 import Topnavbar from '../../Components/Topnavbar';
-import FollowersRendomPost from '../../Components/FollowersRendomPost';
+import {formHead} from '../../Common/Formcss';
 
-const Mainpage = ({navigation}) => {
+const Notification = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar />
-      <Topnavbar navigation={navigation} page={'Mainpage'} />
-      <Bottomnavbar navigation={navigation} page={'Mainpage'} />
-      <FollowersRendomPost />
+      <Topnavbar navigation={navigation} />
+      <Bottomnavbar navigation={navigation} page={'Notification'} />
+      <Text style={formHead}>Notifications</Text>
     </View>
   );
 };
@@ -25,5 +23,4 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
   },
 });
-
-export default Mainpage;
+export default Notification;

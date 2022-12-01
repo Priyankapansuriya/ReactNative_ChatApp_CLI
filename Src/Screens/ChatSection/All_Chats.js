@@ -3,9 +3,10 @@ import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {formHead} from '../../Common/Formcss';
 import Chat_Card from '../../Card/Chat_Card';
+import {searchbar} from '../../Common/Pagecss';
 
 const All_Chats = ({navigation}) => {
-  let chat = [
+  let chats = [
     {
       username: 'Priyanka',
       lastmessage: 'hello',
@@ -71,7 +72,7 @@ const All_Chats = ({navigation}) => {
     },
   ];
 
-  const [keyboard, setKeyboard] = useState('');
+  const [keyword, setKeyword] = useState('');
 
   return (
     <ScrollView style={styles.container}>
@@ -85,15 +86,15 @@ const All_Chats = ({navigation}) => {
       <View style={styles.c1}>
         <Text style={formHead}>Your Chats</Text>
         <TextInput
-          style={styles.searchbar}
+          style={searchbar}
           placeholder="Search"
-          onChangeText={text => setKeyboard(text)}
+          onChangeText={text => setKeyword(text)}
         />
       </View>
       <View style={styles.c2}>
-        {chat
+        {chats
           .filter(chat => {
-            if (keyboard == '') {
+            if (keyword == '') {
               return chat;
             } else if (
               chat.username.toLowerCase().includes(keyword.toLowerCase()) ||
@@ -135,15 +136,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: 'gray',
     borderWidth: 1,
-  },
-  searchbar: {
-    width: '90%',
-    backgroundColor: 'grey',
-    borderRadius: 30,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 10,
-    fontSize: 18,
   },
   c2: {
     width: '100%',

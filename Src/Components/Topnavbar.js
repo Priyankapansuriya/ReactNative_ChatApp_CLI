@@ -4,17 +4,19 @@ import chattt from '../../Assets/chattt.png';
 import {icons1, logo2} from '../Common/Pagecss';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Topnavbar = ({navigation}) => {
+const Topnavbar = ({navigation, page}) => {
   return (
     <View style={styles.container}>
       <Image source={chattt} style={logo2} />
-      <Icon
-        name="chatbubbles-outline"
-        size={24}
-        color="black"
-        style={icons1}
-        onPress={() => navigation.navigate('All_Chats')}
-      />
+      {page == 'Mainpage' && (
+        <Icon
+          name="chatbubbles-outline"
+          size={24}
+          color="black"
+          style={icons1}
+          onPress={() => navigation.navigate('All_Chats')}
+        />
+      )}
     </View>
   );
 };
