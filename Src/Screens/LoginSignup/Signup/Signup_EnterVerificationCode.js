@@ -12,7 +12,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import l1 from '../../../../Assets/l1.png';
 import {formHead3, formInput, formbtn} from '../../../Common/Formcss';
 
-const Signup_EnterVerificationCode = ({navigation}) => {
+const Signup_EnterVerificationCode = ({navigation, route}) => {
+  const {useremail, userVerificationCode} = route.param;
+  console.log(useremail, userVerificationCode);
   return (
     <View style={containerFull}>
       <TouchableOpacity

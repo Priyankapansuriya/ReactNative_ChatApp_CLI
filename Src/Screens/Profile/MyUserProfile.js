@@ -18,7 +18,7 @@ const MyUserProfile = ({navigation}) => {
     followers: 1000,
     following: 1500,
     description: '" La via este belle 😃 🌻"',
-    profile_image: 'https://picsum.photos/200/300',
+    profile_image: 'https://picsum.photos/300/800',
     posts: [
       {
         id: 1,

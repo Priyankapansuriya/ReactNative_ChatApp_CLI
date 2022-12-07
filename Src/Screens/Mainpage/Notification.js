@@ -11,7 +11,21 @@ const Notification = ({navigation}) => {
       <Topnavbar navigation={navigation} />
       <Bottomnavbar navigation={navigation} page={'Notification'} />
       <View style={styles.c1}>
-        <View style={styles.notification}></View>
+        <View style={styles.notification}>
+          <Text>Notifications</Text>
+        </View>
+        <View style={styles.notification}>
+          <Text>Notifications</Text>
+        </View>
+        <View style={styles.notification}>
+          <Text>Notifications</Text>
+        </View>
+        <View style={styles.notification}>
+          <Text>Notifications</Text>
+        </View>
+        <View style={styles.notification}>
+          <Text>Notifications</Text>
+        </View>
       </View>
     </View>
   );
