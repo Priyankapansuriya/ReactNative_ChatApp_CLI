@@ -20,10 +20,10 @@ const Signup_EnterEmail = ({navigation}) => {
     // setLoading(true)
     // navigation.navigate('Signup_EnterVerificationCode')
     if (email == '') {
-      alert('Please Enter Email');
+      alert('Please enter email');
     } else {
       setLoading(true);
-      fetch('http://10.0.2.2:3000/verify', {
+      fetch('http://192.168.43.155:3000/verify', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
