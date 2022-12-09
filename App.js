@@ -6,7 +6,7 @@ import Login from './Src/Screens/LoginSignup/Login/Login';
 import Signup_EnterEmail from './Src/Screens/LoginSignup/Signup/Signup_EnterEmail';
 import Signup_EnterVerificationCode from './Src/Screens/LoginSignup/Signup/Signup_EnterVerificationCode';
 import Signup_ChoosePassword from './Src/Screens/LoginSignup/Signup/Signup_ChoosePassword';
-import Signup_ChoseUsername from './Src/Screens/LoginSignup/Signup/Signup_ChoosePassword';
+import Signup_ChooseUsername from './Src/Screens/LoginSignup/Signup/Signup_ChooseUsername';
 import Signup_AccountCreated from './Src/Screens/LoginSignup/Signup/Signup_AccountCreated';
 import ForgetPassword_AccountRecoverd from './Src/Screens/LoginSignup/ForgetPassword/ForgetPassword_AccountRecoverd';
 import ForgetPassword_ChoosePassword from './Src/Screens/LoginSignup/ForgetPassword/ForgetPassword_ChoosePassword';
@@ -37,7 +37,7 @@ const App = () => {
         />
         <Stack.Screen
           name="Signup_ChooseUsername"
-          component={Signup_ChoseUsername}
+          component={Signup_ChooseUsername}
         />
         <Stack.Screen
           name="Signup_ChoosePassword"
