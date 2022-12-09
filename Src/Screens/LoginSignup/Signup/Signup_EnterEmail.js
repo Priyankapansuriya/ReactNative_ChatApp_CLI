@@ -70,7 +70,7 @@ const Signup_EnterEmail = ({navigation}) => {
         }}
       />
       {loading ? (
-        <ActivityIndicator size="large" color="white" />
+        <ActivityIndicator size="large" color="maroon" />
       ) : (
         <Text style={formbtn} onPress={() => handleEmail()}>
           Next
