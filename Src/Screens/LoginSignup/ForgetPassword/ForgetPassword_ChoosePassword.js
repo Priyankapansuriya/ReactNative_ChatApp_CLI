@@ -37,7 +37,7 @@ const ForgetPassword_ChoosePassword = ({navigation, route}) => {
           if (data.message === 'Password Changed Successfully') {
             setLoading(false);
             alert(data.message);
-            navigation.navigate('ForgotPassword_AccountRecovered');
+            navigation.navigate('ForgetPassword_AccountRecoverd');
           } else {
             setLoading(false);
             alert('Something went wrong');

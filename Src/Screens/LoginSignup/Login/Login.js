@@ -40,7 +40,7 @@ const Login = ({navigation}) => {
             alert(data.error);
           } else if (data.message == 'Successfully Signed In') {
             setLoading(false);
-            await AsyncStorage.setItem('user', JSON.stringify(data));
+
             navigation.navigate('Mainpage', {data});
           }
         })
