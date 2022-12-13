@@ -18,6 +18,8 @@ import SearchUserPage from './Src/Screens/Mainpage/SearchUserPage';
 import Notification from './Src/Screens/Mainpage/Notification';
 import MyUserProfile from './Src/Screens/Profile/MyUserProfile';
 import Setting1 from './Src/Screens/Setting/Setting1';
+import ChangePassword from './Src/Screens/Setting/ChangePassword';
+import EditProfile from './Src/Screens/Setting/EditProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,7 @@ const App = () => {
           headerShown: false,
           animation: 'slide_from_right',
         }}>
+        <Stack.Screen name="Mainpage" component={Mainpage} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup_EnterEmail" component={Signup_EnterEmail} />
         <Stack.Screen
@@ -63,7 +66,7 @@ const App = () => {
           name="ForgetPassword_EnterVerificationCode"
           component={ForgetPassword_EnterVerificationCode}
         />
-        <Stack.Screen name="Mainpage" component={Mainpage} />
+
         <Stack.Screen
           name="All_Chats"
           component={All_Chats}
@@ -95,6 +98,20 @@ const App = () => {
         <Stack.Screen
           name="Setting1"
           component={Setting1}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="ChangePassword"
+          component={ChangePassword}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="EditProfile"
+          component={EditProfile}
           options={{
             animation: 'fade',
           }}

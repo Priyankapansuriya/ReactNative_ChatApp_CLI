@@ -3,14 +3,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {formHead, formHead2} from '../../Common/Formcss';
 
-const Setting1 = ({navigation}) => {
-  const logout = () => {
-    AsyncStorage.removeItem('user').then(() => {
-      alert('Logged out successfully');
-      navigation.navigate('Login');
-    });
-  };
-
+const EditProfile = () => {
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -19,22 +12,13 @@ const Setting1 = ({navigation}) => {
         size={30}
         color="grey"
         style={styles.gohomeicon}
-        onPress={() => navigation.navigate('MyUserProfile')}
+        onPress={() => navigation.navigate('Setting1')}
       />
       <Text style={formHead}>Settings</Text>
-      <Text
-        style={styles.txt1}
-        onPress={() => navigation.navigate('EditProfile')}>
-        Edit Profile
-      </Text>
-      <Text
-        style={styles.txt1}
-        onPress={() => navigation.navigate('ChangePassword')}>
-        Change Password
-      </Text>
-      <Text style={styles.txt1} onPress={() => logout()}>
-        Logout
-      </Text>
+      <Text style={styles.txt1}>Edit Profile</Text>
+      <Text style={styles.txt1}>Change Profile</Text>
+      <Text style={styles.txt1}>Change Username</Text>
+      <Text style={styles.txt1}>Change Description</Text>
     </View>
   );
 };
@@ -63,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Setting1;
+export default EditProfile;

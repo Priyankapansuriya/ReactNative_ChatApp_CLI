@@ -1,4 +1,5 @@
 import {
+  AsyncStorage,
   StyleSheet,
   Text,
   View,
@@ -40,7 +41,7 @@ const Login = ({navigation}) => {
             alert(data.error);
           } else if (data.message == 'Successfully Signed In') {
             setLoading(false);
-
+            await AsyncStorage.setItem('user', JSON.stringify(data));
             navigation.navigate('Mainpage', {data});
           }
         })
@@ -85,7 +86,7 @@ const Login = ({navigation}) => {
         Don't have an account?
         <Text
           style={{color: 'white'}}
-          onPress={() => navigation.navigate('Mainpage')}>
+          onPress={() => navigation.navigate('Signup_EnterEmail')}>
           Signup
         </Text>
       </Text>
