@@ -20,6 +20,9 @@ import MyUserProfile from './Src/Screens/Profile/MyUserProfile';
 import Setting1 from './Src/Screens/Setting/Setting1';
 import ChangePassword from './Src/Screens/Setting/ChangePassword';
 import EditProfile from './Src/Screens/Setting/EditProfile';
+import ChangeUsername from './Src/Screens/Setting/ChangeUsername';
+import ChangeDescription from './Src/Screens/Setting/ChangeDescription';
+import ChangeUserProfile from './Src/Screens/Setting/ChangeUserProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -112,6 +115,27 @@ const App = () => {
         <Stack.Screen
           name="EditProfile"
           component={EditProfile}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="ChangeUsername"
+          component={ChangeUsername}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="ChangeDescription"
+          component={ChangeDescription}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="ChangeUserProfile"
+          component={ChangeUserProfile}
           options={{
             animation: 'fade',
           }}

@@ -1,9 +1,9 @@
-import {StatusBar, StyleSheet, Text, View, AsyncStorage} from 'react-native';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {formHead, formHead2} from '../../Common/Formcss';
 
-const EditProfile = () => {
+const EditProfile = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -14,11 +14,22 @@ const EditProfile = () => {
         style={styles.gohomeicon}
         onPress={() => navigation.navigate('Setting1')}
       />
-      <Text style={formHead}>Settings</Text>
-      <Text style={styles.txt1}>Edit Profile</Text>
-      <Text style={styles.txt1}>Change Profile</Text>
-      <Text style={styles.txt1}>Change Username</Text>
-      <Text style={styles.txt1}>Change Description</Text>
+      <Text style={formHead}>Edit Profile</Text>
+      <Text
+        style={styles.txt1}
+        onPress={() => navigation.navigate('ChangeUserProfile')}>
+        Change Profile
+      </Text>
+      <Text
+        style={styles.txt1}
+        onPress={() => navigation.navigate('ChangeUsername')}>
+        Change Username
+      </Text>
+      <Text
+        style={styles.txt1}
+        onPress={() => navigation.navigate('ChangeDescription')}>
+        Change Description
+      </Text>
     </View>
   );
 };
