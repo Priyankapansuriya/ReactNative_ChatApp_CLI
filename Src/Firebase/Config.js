@@ -1,4 +1,5 @@
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/storage';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDq1QWYS0ZgUpM0s83pWlcaCerF54-NLdw',
@@ -9,7 +10,7 @@ const firebaseConfig = {
   appId: '1:333472655416:web:cf8c04980b5f6462c45ecd',
 };
 
-if (firebase.apps.length) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 

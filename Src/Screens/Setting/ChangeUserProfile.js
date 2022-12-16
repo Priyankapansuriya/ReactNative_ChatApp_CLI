@@ -22,45 +22,40 @@ import {
 import l1 from '../../../Assets/l1.png';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {firebase} from '../../Firebase/Config';
-import * as ImagePicker from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 
 const ChangeUserProfile = ({navigation}) => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
+  const takephoto = () => {
+    ImagePicker.openCamera({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      console.log(image);
+      setImage(image, path);
+      this.bs.current.handleUpload();
     });
-    // console.log(result)
-
-    if (!result.cancelled) {
-      const source = {uri: result.uri};
-      setImage(source);
-
-      const response = await fetch(result.uri);
-      const blob = await response.blob();
-      const filename = result.uri.substring(result.uri);
-
-      const ref = firebase.storage().ref().child(filename);
-      const snapshot = await ref.put(blob);
-      const url = await snapshot.ref.getDownloadURL();
-
-      // console.log(url)
-      return url;
-    } else {
-      return null;
-    }
   };
-
+  const choosefromlibrary = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      console.log(image);
+      setImage(image, path);
+      this.bs.current.handleUpload();
+    });
+  };
   const handleUpload = () => {
     AsyncStorage.getItem('user').then(data => {
       setLoading(true);
 
-      pickImage().then(url => {
+      takephoto().then(url => {
         fetch('http://192.168.43.155:3000/setprofilepic', {
           method: 'post',
           headers: {
@@ -76,7 +71,37 @@ const ChangeUserProfile = ({navigation}) => {
             if (data.message === 'Profile picture updated successfully') {
               setLoading(false);
               alert('Profile picture updated successfully');
-              navigation.navigate('Setting1');
+              navigation.navigate('Settings_1');
+            } else if (data.error === 'Invalid Credentials') {
+              alert('Invalid Credentials');
+              setLoading(false);
+              navigation.navigate('Login');
+            } else {
+              setLoading(false);
+              alert('Please Try Again');
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      });
+      choosefromlibrary().then(url => {
+        fetch('http://192.168.43.155:3000/setprofilepic', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: JSON.parse(data).user.email,
+            profilepic: url,
+          }),
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.message === 'Profile picture updated successfully') {
+              setLoading(false);
+              alert('Profile picture updated successfully');
+              navigation.navigate('Settings_1');
             } else if (data.error === 'Invalid Credentials') {
               alert('Invalid Credentials');
               setLoading(false);
@@ -92,6 +117,7 @@ const ChangeUserProfile = ({navigation}) => {
       });
     });
   };
+
   return (
     <View style={containerFull}>
       <TouchableOpacity
@@ -114,7 +140,14 @@ const ChangeUserProfile = ({navigation}) => {
         <ActivityIndicator size="large" color="maroon" />
       ) : (
         <Text style={formbtn} onPress={() => handleUpload()}>
-          Upload
+          Take Photo
+        </Text>
+      )}
+      {loading ? (
+        <ActivityIndicator size="large" color="maroon" />
+      ) : (
+        <Text style={formbtn} onPress={() => handleUpload()}>
+          Choose From Library
         </Text>
       )}
     </View>
