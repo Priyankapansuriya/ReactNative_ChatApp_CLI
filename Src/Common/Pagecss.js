@@ -35,6 +35,15 @@ module.exports = {
     color: 'white',
     fontSize: 30,
   },
+  icon: {
+    flexDirection: 'row',
+    position: 'absolute',
+    top: 15,
+    right: 40,
+    alignItems: 'center',
+    color: 'white',
+    fontSize: 30,
+  },
   logo2: {
     // width: 200,
     height: 40,

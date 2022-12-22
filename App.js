@@ -23,6 +23,9 @@ import EditProfile from './Src/Screens/Setting/EditProfile';
 import ChangeUsername from './Src/Screens/Setting/ChangeUsername';
 import ChangeDescription from './Src/Screens/Setting/ChangeDescription';
 import ChangeUserProfile from './Src/Screens/Setting/ChangeUserProfile';
+import AddPost from './Src/Screens/Mainpage/AddPost';
+import OtherUserProfile from './Src/Screens/Profile/OtherUserProfile';
+import MessagePage from './Src/Screens/ChatSection/MessagePage';
 
 const Stack = createNativeStackNavigator();
 
@@ -136,6 +139,27 @@ const App = () => {
         <Stack.Screen
           name="ChangeUserProfile"
           component={ChangeUserProfile}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="AddPost"
+          component={AddPost}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="OtherUserProfile"
+          component={OtherUserProfile}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="MessagePage"
+          component={MessagePage}
           options={{
             animation: 'fade',
           }}

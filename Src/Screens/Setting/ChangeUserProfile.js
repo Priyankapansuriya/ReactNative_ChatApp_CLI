@@ -30,7 +30,7 @@ const ChangeUserProfile = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const pickImage = async () => {
-    let result = await ImagePicker.openPicker({
+    const result = await launchImageLibrary({
       width: 300,
       height: 400,
       cropping: true,
@@ -43,9 +43,9 @@ const ChangeUserProfile = ({navigation}) => {
 
       const response = await fetch(result.uri);
       const blob = await response.blob();
-      const filename = result.uri.substring(result.uri);
+      const fileName = result.uri.substring(result.uri);
 
-      const ref = firebase.storage().ref().child(filename);
+      const ref = firebase.storage().ref().child(fileName);
       const snapshot = await ref.put(blob);
       const url = await snapshot.ref.getDownloadURL();
 
@@ -56,10 +56,9 @@ const ChangeUserProfile = ({navigation}) => {
     }
   };
   const handleUpload = () => {
-    pickImage();
+    //  pickImage();
     AsyncStorage.getItem('user').then(data => {
       setLoading(true);
-
       pickImage().then(url => {
         fetch('http://192.168.43.155:3000/setprofilepic', {
           method: 'post',

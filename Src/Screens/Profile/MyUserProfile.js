@@ -179,12 +179,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     paddingVertical: 50,
   },
-  container: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'black',
-    paddingVertical: 50,
-  },
+
   c1: {
     width: '100%',
     alignItems: 'center',

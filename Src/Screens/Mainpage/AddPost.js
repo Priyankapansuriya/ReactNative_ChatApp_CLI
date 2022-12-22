@@ -22,7 +22,7 @@ import {
 } from '../../Common/Formcss';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ChangeDescription = ({navigation}) => {
+const AddPost = ({navigation}) => {
   const [description, setdescription] = useState('');
   const [loading, setLoading] = useState(false);
   const handleDescription = () => {
@@ -90,7 +90,7 @@ const ChangeDescription = ({navigation}) => {
         style={formInput}
         onChangeText={text => setdescription(text)}
         multiline={true}
-        numberOfLines={3}
+        numberOfLines={2}
       />
 
       {loading ? (
@@ -104,6 +104,6 @@ const ChangeDescription = ({navigation}) => {
   );
 };
 
-export default ChangeDescription;
+export default AddPost;
 
 const styles = StyleSheet.create({});
