@@ -13,7 +13,7 @@ const Post_Card = ({post_pic, profile_image, username, likes, comments}) => {
     <View style={styles.container}>
       <View style={styles.c1}>
         <Image source={{uri: profile_image}} style={styles.profilepic} />
-        <Text> {username}</Text>
+        <Text style={styles.username}> {username}</Text>
       </View>
       <Image source={{uri: post_pic}} style={styles.image} />
       <View style={styles.s2}>

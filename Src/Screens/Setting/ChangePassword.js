@@ -12,7 +12,12 @@ import React, {useState} from 'react';
 import {containerFull, goback, logo1} from '../../Common/Pagecss';
 import Icon from 'react-native-vector-icons/Ionicons';
 import l1 from '../../../Assets/l1.png';
-import {formHead2, formInput, formbtn} from '../../Common/Formcss';
+import {
+  formHead2,
+  formInput,
+  formbtn,
+  formTextLinkRight,
+} from '../../Common/Formcss';
 
 const ChangePassword = ({navigation}) => {
   const [oldpassword, setOldpassword] = useState('');
@@ -28,7 +33,7 @@ const ChangePassword = ({navigation}) => {
     } else {
       setLoading(true);
       AsyncStorage.getItem('user').then(data => {
-        fetch('http://10.0.2.2:3000/changepassword', {
+        fetch('http://192.168.43.155:3000/changepassword', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
